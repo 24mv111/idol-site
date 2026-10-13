@@ -10,11 +10,15 @@ export type IdolMember = {
   bloodType: string;
 };
 
+const imagePath = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 export type IdolGroup = {
   name: string;
   gender: Gender;
   points: number[];
   image: string | null;
+  copyright: string;
   description: string;
   members: IdolMember[];
   recommendedSongs: string[];
@@ -106,6 +110,7 @@ const group = (
   gender: Gender,
   points: number[],
   image: string | null = null,
+  copyright: string = "",
   members: IdolMember[] = [],
   description: string = defaultDescription,
   recommendedSongs: string[] = [],
@@ -113,9 +118,13 @@ const group = (
   name,
   gender,
   points,
-  image,
+  image: image ? imagePath(image) : null,
+  copyright,
   description,
-  members,
+  members: members.map((member) => ({
+    ...member,
+    image: imagePath(member.image),
+  })),
   recommendedSongs,
 });
 
@@ -129,6 +138,7 @@ export const idolGroups: IdolGroup[] = [
       1, 3, 2, 1,
     ],
     "/images/nogizaka.jpg",
+    "© 乃木坂46LLC",
     [
       {
         name: "遠藤さくら",
@@ -160,6 +170,7 @@ export const idolGroups: IdolGroup[] = [
       1, 1, 3, 2,
     ],
     "/images/saku46.jpg",
+    "© Seed & Flower LLC",
     [
       {
         name: "森田ひかる",
@@ -191,6 +202,7 @@ export const idolGroups: IdolGroup[] = [
       3, 3, 1, 2,
     ],
     "/images/hinata46.jpeg",
+    "© Seed & Flower LLC",
     [
       {
         name: "小坂菜緒",
@@ -222,6 +234,7 @@ export const idolGroups: IdolGroup[] = [
       1, 3, 2, 1,
     ],
     "/images/iko.webp",
+    "© 2026 Yoyogi Animation academy",
     [
       {
         name: "佐々木舞香",
@@ -253,6 +266,7 @@ export const idolGroups: IdolGroup[] = [
       2, 2, 3, 1,
     ],
     "/images/me.webp",
+    "© 2026 Yoyogi Animation academy",
     [
       {
         name: "冨田菜々風",
@@ -284,6 +298,7 @@ export const idolGroups: IdolGroup[] = [
       3, 2, 1, 3,
     ],
     "/images/joy.jpg",
+    "© 2026 Yoyogi Animation academy",
     [
       {
         name: "江角怜音",
@@ -315,6 +330,7 @@ export const idolGroups: IdolGroup[] = [
       2, 3, 1, 2,
     ],
     "/images/akb.jpg",
+    "©AKB48",
     [
       {
         name: "伊藤百花",
@@ -346,6 +362,7 @@ export const idolGroups: IdolGroup[] = [
       1, 3, 2, 1,
     ],
     "/images/zippa.jpeg",
+    "© FRUITS ZIPPER",
     [
       {
         name: "松本かれん",
@@ -377,6 +394,7 @@ export const idolGroups: IdolGroup[] = [
       1, 3, 2, 1,
     ],
     "/images/cutie.jpg",
+    "© CUTIE STREET",
     [
       {
         name: "桜庭遥花",
@@ -412,6 +430,7 @@ export const idolGroups: IdolGroup[] = [
       2, 3, 2, 1,
     ],
     "/images/can.jpg",
+    "© CANDY TUNE",
     [
       {
         name: "立花琴未",
@@ -443,6 +462,7 @@ export const idolGroups: IdolGroup[] = [
       1, 1, 3, 2,
     ],
     "/images/juice.webp",
+    "©UP-FRONT PROMOTION Co., Ltd.",
     [
       {
         name: "段原瑠々",
@@ -474,6 +494,7 @@ export const idolGroups: IdolGroup[] = [
       3, 2, 1, 3,
     ],
     "/images/nonfic.jpg",
+    "©imaginate Inc.",
     [
       {
         name: "こるね",
@@ -505,6 +526,7 @@ export const idolGroups: IdolGroup[] = [
       1, 2, 1, 3,
     ],
     "/images/momokuro.jpg",
+    "© STARDUST PROMOTION INC, ALL RIGHTS RESERVED.",
     [
       {
         name: "百田夏菜子",
@@ -536,6 +558,7 @@ export const idolGroups: IdolGroup[] = [
       1, 3, 1, 2,
     ],
     "/images/tokisen.jpg",
+    "© 2026 STARDUST PROMOTION, INC. Powered by SKIYAKI Inc.",
     [
       {
         name: "菅田愛貴",
@@ -567,6 +590,7 @@ export const idolGroups: IdolGroup[] = [
       3, 1, 2, 3,
     ],
     "/images/ebityu.jpg",
+    "© STARDUST PROMOTION,INC. All Rights Reserved.",
     [
       {
         name: "真山りか",
@@ -598,6 +622,7 @@ export const idolGroups: IdolGroup[] = [
       2, 3, 1, 2,
     ],
     "/images/ilife.jpg",
+    "© iLiFE! All rights reserved.",
     [
       {
         name: "あいす",
@@ -629,6 +654,7 @@ export const idolGroups: IdolGroup[] = [
       2, 2, 1, 3,
     ],
     "/images/kyurusite.jpg",
+    "© DEARSTAGE inc.",
     [
       {
         name: "逃げ水あむ",
@@ -664,6 +690,7 @@ export const idolGroups: IdolGroup[] = [
       3, 1, 2, 3,
     ],
     "/images/fan2.jpg",
+    "© Cloud Nine Inc.",
     [
       {
         name: "もな",
@@ -695,6 +722,7 @@ export const idolGroups: IdolGroup[] = [
       3, 1, 2, 3,
     ],
     "/images/makyuro.jpg",
+    " © マーキュロ",
     [
       {
         name: "藍咲ユウリ",
@@ -725,6 +753,7 @@ export const idolGroups: IdolGroup[] = [
       2, 3, 1, 2,
     ],
     "/images/mei.webp",
+    "© LAPONE GIRLS",
     [
       {
         name: "MOMONA",
@@ -756,6 +785,7 @@ export const idolGroups: IdolGroup[] = [
       1, 3, 2, 1,
     ],
     "/images/niziu2.jpg",
+    "©2020 Sony Music Entertainment (Japan) Inc. / JYP Entertainment. All rights reserved.",
     [
       {
         name: "MIIHI",
@@ -787,6 +817,7 @@ export const idolGroups: IdolGroup[] = [
       1, 3, 2, 1,
     ],
     "/images/illit.jpeg",
+    "(C) BELIFT LAB Inc. ALL RIGHTS RESERVED.",
     [
       {
         name: "WONHEE",
@@ -818,6 +849,7 @@ export const idolGroups: IdolGroup[] = [
       1, 3, 2, 1,
     ],
     "/images/twice2.webp",
+    "© Warner Music Japan Inc.",
     [
       {
         name: "MOMO",
@@ -849,6 +881,7 @@ export const idolGroups: IdolGroup[] = [
       1, 2, 3, 1,
     ],
     "/images/ase.jpg",
+    "© SM ENTERTAINMENT CO.,LTD. All Rights Reserved.",
     [
       {
         name: "KARINA",
@@ -889,6 +922,7 @@ export const idolGroups: IdolGroup[] = [
       1, 2, 3, 1,
     ],
     "/images/jump2.jpg",
+    "© STARTO ENTERTAINMENT, Inc. All Rights Reserved.",
     [
       {
         name: "山田涼介",
@@ -920,6 +954,7 @@ export const idolGroups: IdolGroup[] = [
       1, 2, 3, 1,
     ],
     "/images/eight2.jpg",
+    "© STARTO ENTERTAINMENT, Inc. All Rights Reserved.",
     [
       {
         name: "大倉忠義",
@@ -951,6 +986,7 @@ export const idolGroups: IdolGroup[] = [
       1, 2, 3, 1,
     ],
     "/images/news2.webp",
+    "© STARTO ENTERTAINMENT, Inc. All Rights Reserved.",
     [
       {
         name: "増田貴久",
@@ -982,6 +1018,7 @@ export const idolGroups: IdolGroup[] = [
       2, 1, 2, 3,
     ],
     "/images/time2.jpg",
+    "© STARTO ENTERTAINMENT, Inc. All Rights Reserved.",
     [
       {
         name: "佐藤勝利",
@@ -1013,6 +1050,7 @@ export const idolGroups: IdolGroup[] = [
       3, 2, 1, 3,
     ],
     "/images/lienel.jpg",
+    "© 2026 STARDUST PROMOTION, INC. STARDUST MUSIC, INC. All Rights Reserved. Powered by SKIYAKI Inc.",
     [
       {
         name: "近藤駿太",
@@ -1044,6 +1082,7 @@ export const idolGroups: IdolGroup[] = [
       1, 1, 3, 2,
     ],
     "/images/six.jpg",
+    "© STARTO ENTERTAINMENT, Inc. All Rights Reserved.",
     [
       {
         name: "ジェシー",
@@ -1075,6 +1114,7 @@ export const idolGroups: IdolGroup[] = [
       1, 1, 3, 2,
     ],
     "/images/snow2.jpg",
+    "© STARTO ENTERTAINMENT, Inc. All Rights Reserved.",
     [
       {
         name: "目黒蓮",
@@ -1106,6 +1146,7 @@ export const idolGroups: IdolGroup[] = [
       1, 3, 2, 1,
     ],
     "/images/naniwa2.jpg",
+    "© STARTO ENTERTAINMENT, Inc. All Rights Reserved.",
     [
       {
         name: "道枝駿佑",
@@ -1137,6 +1178,7 @@ export const idolGroups: IdolGroup[] = [
       3, 1, 3, 2,
     ],
     "/images/aa.jpg",
+    "© STARTO ENTERTAINMENT, Inc. All Rights Reserved.",
     [
       {
         name: "末澤誠也",
@@ -1168,6 +1210,7 @@ export const idolGroups: IdolGroup[] = [
       3, 1, 2, 3,
     ],
     "/images/travis2.jpg",
+    "© STARTO ENTERTAINMENT, Inc. All Rights Reserved.",
     [
       {
         name: "宮近海斗",
@@ -1199,6 +1242,7 @@ export const idolGroups: IdolGroup[] = [
       2, 1, 2, 3,
     ],
     "/images/tyoutokkyuu2.jpg",
+    "© 2026 STARDUST PROMOTION, INC.STARDUST MUSIC, INC.",
     [
       {
         name: "ハル",
@@ -1230,6 +1274,7 @@ export const idolGroups: IdolGroup[] = [
       1, 1, 3, 2,
     ],
     "/images/milk.jpg",
+    "© 2026 STARDUST PROMOTION, INC.STARDUST MUSIC, INC.",
     [
       {
         name: "佐野勇斗",
@@ -1261,6 +1306,7 @@ export const idolGroups: IdolGroup[] = [
       2, 1, 2, 3,
     ],
     "/images/sakurasimeji.jpeg",
+    "© 2026 STARDUST PROMOTION, INC.STARDUST MUSIC, INC.",
     [
       {
         name: "田中雅功",
@@ -1292,6 +1338,7 @@ export const idolGroups: IdolGroup[] = [
       2, 1, 3, 2,
     ],
     "/images/genzi.png",
+    "© 2026 STARDUST PROMOTION, INC.STARDUST MUSIC, INC.",
     [
       {
         name: "大倉空人",
@@ -1323,6 +1370,7 @@ export const idolGroups: IdolGroup[] = [
       2, 1, 3, 2,
     ],
     "/images/tre.avif",
+    "©avex",
     [
       {
         name: "ASAHI",
@@ -1354,6 +1402,7 @@ export const idolGroups: IdolGroup[] = [
       2, 1, 3, 2,
     ],
     "/images/txt.webp",
+    "© BIGHIT MUSIC / HYBE. All Rights Reserved.",
     [
       {
         name: "YEONJUN",
@@ -1385,6 +1434,7 @@ export const idolGroups: IdolGroup[] = [
       1, 2, 3, 1,
     ],
     "/images/bts.webp",
+    "© BIGHIT MUSIC / HYBE. All Rights Reserved.",
     [
       {
         name: "V",
@@ -1416,6 +1466,7 @@ export const idolGroups: IdolGroup[] = [
       1, 2, 3, 1,
     ],
     "/images/seven2.jpg",
+    "©PLEDIS Co.,Ltd. All Rights Reserved.",
     [
       {
         name: "JEONGHAN",
@@ -1447,6 +1498,7 @@ export const idolGroups: IdolGroup[] = [
       2, 2, 3, 1,
     ],
     "/images/jo1.jpg",
+    "© LAPONE ENTERTAINMENT / Fanplus",
     [
       {
         name: "豆原一成",
@@ -1478,6 +1530,7 @@ export const idolGroups: IdolGroup[] = [
       2, 3, 2, 1,
     ],
     "/images/ini2.webp",
+    "© LAPONE ENTERTAINMENT / Fanplus",
     [
       {
         name: "木村柾哉",
@@ -1509,6 +1562,7 @@ export const idolGroups: IdolGroup[] = [
       2, 1, 3, 2,
     ],
     "/images/number2.jpg",
+    "©TOBE Co., Ltd. All rights reserved.",
     [
       {
         name: "平野紫耀",
@@ -1540,6 +1594,7 @@ export const idolGroups: IdolGroup[] = [
       2, 1, 3, 2,
     ],
     "/images/one.jpeg",
+    "© 2026 STARDUST PROMOTION, INC.STARDUST MUSIC, INC.",
     [
       {
         name: "高尾颯斗",
@@ -1571,6 +1626,7 @@ export const idolGroups: IdolGroup[] = [
       2, 1, 2, 3,
     ],
     "/images/icex2.jpg",
+    "© 2026 STARDUST PROMOTION, INC.STARDUST MUSIC, INC.",
     [
       {
         name: "阿久根温世",
@@ -1602,6 +1658,7 @@ export const idolGroups: IdolGroup[] = [
       3, 1, 2, 3,
     ],
     "/images/zavage2.jpg",
+    "",
     [
       {
         name: "池ぱら陽音",
@@ -1632,6 +1689,7 @@ export const idolGroups: IdolGroup[] = [
       3, 3, 1, 3,
     ],
     "/images/love2.webp",
+    "© RINDO Entertainment",
     [
       {
         name: "たいよう",

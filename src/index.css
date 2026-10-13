@@ -1393,3 +1393,11 @@ button:focus-visible {
   right: 38%;
   opacity: 0.75;
 }
+
+.image-copyright {
+  margin: 6px 4px 0;
+  color: var(--muted);
+  font-size: 10px;
+  text-align: right;
+  line-height: 1.5;
+}

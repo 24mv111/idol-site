@@ -272,6 +272,7 @@ function ResultCard({
     <article className="result-card">
       <p className="match-number">{index + 1}位</p>
       <h2>{group.name}</h2>
+
       <div className="result-image">
         {group.image ? (
           <img src={group.image} alt={`${group.name}のグループ写真`} />
@@ -283,6 +284,8 @@ function ResultCard({
           </div>
         )}
       </div>
+
+      {group.copyright && <p className="image-copyright">{group.copyright}</p>}
       <div className="result-copy">
         <span aria-hidden="true">♡</span>
         <p>{group.description}</p>
