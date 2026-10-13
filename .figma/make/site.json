@@ -1,0 +1,10 @@
+{
+  "description": "Interactive quiz that matches users with ideal idol groups based on personalized answers and gender filtering for a tailored fan experience.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
