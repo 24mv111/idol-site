@@ -1401,3 +1401,46 @@ button:focus-visible {
   text-align: right;
   line-height: 1.5;
 }
+
+/* ========================================
+   質問画面・診断結果画面 カラフル背景
+======================================== */
+
+.quiz-screen,
+.result-screen {
+  position: relative;
+  min-height: 100vh;
+
+  background:
+    /* 左上 ピンク */
+    radial-gradient(
+      circle at 5% 18%,
+      rgba(255, 180, 205, 0.32) 0%,
+      transparent 27%
+    ),
+    /* 右上 水色 */
+    radial-gradient(
+        circle at 95% 15%,
+        rgba(175, 220, 255, 0.3) 0%,
+        transparent 28%
+      ),
+    /* 左下 黄色 */
+    radial-gradient(
+        circle at 8% 85%,
+        rgba(255, 225, 155, 0.28) 0%,
+        transparent 27%
+      ),
+    /* 右下 紫 */
+    radial-gradient(
+        circle at 92% 82%,
+        rgba(205, 180, 255, 0.3) 0%,
+        transparent 30%
+      ),
+    /* 中央ほんのりピンク */
+    radial-gradient(
+        circle at 50% 50%,
+        rgba(255, 220, 230, 0.18) 0%,
+        transparent 38%
+      ),
+    #fffaf7;
+}
