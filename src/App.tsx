@@ -39,6 +39,24 @@ function ActionButton({
 function HomeScreen({ onStart }: { onStart: () => void }) {
   return (
     <main className="screen home-screen">
+      {/* 背景の星 */}
+      <div className="star-bg" aria-hidden="true">
+        <span className="bg-star star-1">✦</span>
+        <span className="bg-star star-2">✧</span>
+        <span className="bg-star star-3">✦</span>
+        <span className="bg-star star-4">✧</span>
+        <span className="bg-star star-5">✦</span>
+        <span className="bg-star star-6">✦</span>
+        <span className="bg-star star-7">✧</span>
+        <span className="bg-star star-8">✦</span>
+        <span className="bg-star star-9">✧</span>
+        <span className="bg-star star-10">✦</span>
+        <span className="bg-star star-11">✧</span>
+        <span className="bg-star star-12">✦</span>
+        <span className="bg-star star-13">✦</span>
+        <span className="bg-star star-14">✧</span>
+        <span className="bg-star star-15">✦</span>
+      </div>
       {/* ハート・星 */}
       <div className="decor decor-heart" aria-hidden="true">
         ♡
@@ -184,6 +202,24 @@ function QuizScreen({
 
   return (
     <main className="screen quiz-screen">
+      {/* 背景の星 */}
+      <div className="star-bg" aria-hidden="true">
+        <span className="bg-star star-1">✦</span>
+        <span className="bg-star star-2">✧</span>
+        <span className="bg-star star-3">✦</span>
+        <span className="bg-star star-4">✧</span>
+        <span className="bg-star star-5">✦</span>
+        <span className="bg-star star-6">✦</span>
+        <span className="bg-star star-7">✧</span>
+        <span className="bg-star star-8">✦</span>
+        <span className="bg-star star-9">✧</span>
+        <span className="bg-star star-10">✦</span>
+        <span className="bg-star star-11">✧</span>
+        <span className="bg-star star-12">✦</span>
+        <span className="bg-star star-13">✦</span>
+        <span className="bg-star star-14">✧</span>
+        <span className="bg-star star-15">✦</span>
+      </div>
       <header className="site-header">
         <BrandMark />
         <p>あなたの“好き”を聞かせてください</p>
@@ -347,6 +383,40 @@ function ResultScreen({
 }) {
   return (
     <main className="screen result-screen">
+      {/* 背景の星 */}
+      <div className="star-bg" aria-hidden="true">
+        <span className="bg-star star-1">✦</span>
+        <span className="bg-star star-2">✧</span>
+        <span className="bg-star star-3">✦</span>
+        <span className="bg-star star-4">✧</span>
+        <span className="bg-star star-5">✦</span>
+        <span className="bg-star star-6">✦</span>
+        <span className="bg-star star-7">✧</span>
+        <span className="bg-star star-8">✦</span>
+        <span className="bg-star star-9">✧</span>
+        <span className="bg-star star-16">♡</span>
+        <span className="bg-star star-17">✧</span>
+        <span className="bg-star star-18">✦</span>
+        <span className="bg-star star-19">♡</span>
+        <span className="bg-star star-20">✧</span>
+        <span className="bg-star star-21">•</span>
+        <span className="bg-star star-22">✦</span>
+        <span className="bg-star star-23">♡</span>
+
+        <span className="bg-star star-24">✧</span>
+        <span className="bg-star star-25">♡</span>
+        <span className="bg-star star-26">✦</span>
+        <span className="bg-star star-27">♡</span>
+        <span className="bg-star star-28">•</span>
+        <span className="bg-star star-29">✧</span>
+        <span className="bg-star star-30">✦</span>
+        <span className="bg-star star-10">✦</span>
+        <span className="bg-star star-11">✧</span>
+        <span className="bg-star star-12">✦</span>
+        <span className="bg-star star-13">✦</span>
+        <span className="bg-star star-14">✧</span>
+        <span className="bg-star star-15">✦</span>
+      </div>
       <header className="site-header">
         <BrandMark />
       </header>

@@ -1444,3 +1444,303 @@ button:focus-visible {
       ),
     #fffaf7;
 }
+
+/* ========================================
+   背景いっぱいの星
+======================================== */
+
+.quiz-screen,
+.result-screen {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(255, 192, 214, 0.32),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(187, 220, 255, 0.32),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 15% 85%,
+      rgba(255, 225, 166, 0.28),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 88% 80%,
+      rgba(211, 192, 255, 0.3),
+      transparent 28%
+    ),
+    #fffaf8;
+}
+
+/* 星を置くエリア */
+.star-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* 星共通 */
+.bg-star {
+  position: absolute;
+  line-height: 1;
+  opacity: 0.55;
+  text-shadow: 0 0 12px currentColor;
+}
+
+/* =====================
+   星の位置
+===================== */
+
+.star-1 {
+  top: 12%;
+  left: 5%;
+  font-size: 30px;
+  color: #efabc2;
+}
+
+.star-2 {
+  top: 25%;
+  left: 14%;
+  font-size: 17px;
+  color: #b9a7e8;
+}
+
+.star-3 {
+  top: 43%;
+  left: 4%;
+  font-size: 22px;
+  color: #a9cef2;
+}
+
+.star-4 {
+  top: 67%;
+  left: 11%;
+  font-size: 35px;
+  color: #f2c4d2;
+}
+
+.star-5 {
+  top: 82%;
+  left: 5%;
+  font-size: 16px;
+  color: #e9c779;
+}
+
+/* 真ん中付近 */
+
+.star-6 {
+  top: 9%;
+  left: 32%;
+  font-size: 16px;
+  color: #c5afe9;
+}
+
+.star-7 {
+  top: 88%;
+  left: 30%;
+  font-size: 25px;
+  color: #efabc2;
+}
+
+.star-8 {
+  top: 16%;
+  left: 61%;
+  font-size: 20px;
+  color: #e8c572;
+}
+
+.star-9 {
+  top: 91%;
+  left: 65%;
+  font-size: 17px;
+  color: #9fc9ee;
+}
+
+/* 右側 */
+
+.star-10 {
+  top: 11%;
+  right: 7%;
+  font-size: 32px;
+  color: #a9cef2;
+}
+
+.star-11 {
+  top: 28%;
+  right: 15%;
+  font-size: 17px;
+  color: #e8b2d4;
+}
+
+.star-12 {
+  top: 45%;
+  right: 5%;
+  font-size: 26px;
+  color: #c1ade9;
+}
+
+.star-13 {
+  top: 61%;
+  right: 13%;
+  font-size: 15px;
+  color: #e9c779;
+}
+
+.star-14 {
+  top: 76%;
+  right: 5%;
+  font-size: 34px;
+  color: #efabc2;
+}
+
+.star-15 {
+  top: 89%;
+  right: 20%;
+  font-size: 19px;
+  color: #b5d4f0;
+}
+
+/* カードなどは星より前 */
+.quiz-screen > *:not(.star-bg),
+.result-screen > *:not(.star-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+/* ハートを少しやわらかく見せる */
+.result-screen .star-16,
+.result-screen .star-19,
+.result-screen .star-23,
+.result-screen .star-25,
+.result-screen .star-27 {
+  font-family: serif;
+  opacity: 0.55;
+  text-shadow: 0 0 16px currentColor;
+}
+
+/* 小さいドット */
+.result-screen .star-21,
+.result-screen .star-28 {
+  font-size: 22px;
+  opacity: 0.45;
+}
+
+/* ========================================
+   診断結果画面 追加キラキラ・ハート
+======================================== */
+
+.result-screen .star-16 {
+  top: 20%;
+  left: 7%;
+  font-size: 30px;
+  color: #ef9fb9;
+}
+
+.result-screen .star-17 {
+  top: 31%;
+  left: 18%;
+  font-size: 16px;
+  color: #b8a7e8;
+}
+
+.result-screen .star-18 {
+  top: 39%;
+  left: 8%;
+  font-size: 23px;
+  color: #a9cef2;
+}
+
+.result-screen .star-19 {
+  top: 52%;
+  left: 16%;
+  font-size: 27px;
+  color: #efabc2;
+}
+
+.result-screen .star-20 {
+  top: 63%;
+  left: 6%;
+  font-size: 18px;
+  color: #e8c572;
+}
+
+.result-screen .star-21 {
+  top: 73%;
+  left: 19%;
+  font-size: 15px;
+  color: #c5afe9;
+}
+
+.result-screen .star-22 {
+  top: 84%;
+  left: 8%;
+  font-size: 25px;
+  color: #a9cef2;
+}
+
+.result-screen .star-23 {
+  top: 93%;
+  left: 17%;
+  font-size: 29px;
+  color: #ef9fb9;
+}
+
+/* 右側 */
+
+.result-screen .star-24 {
+  top: 20%;
+  right: 8%;
+  font-size: 18px;
+  color: #b9a7e8;
+}
+
+.result-screen .star-25 {
+  top: 33%;
+  right: 17%;
+  font-size: 30px;
+  color: #efabc2;
+}
+
+.result-screen .star-26 {
+  top: 47%;
+  right: 7%;
+  font-size: 22px;
+  color: #a9cef2;
+}
+
+.result-screen .star-27 {
+  top: 59%;
+  right: 16%;
+  font-size: 26px;
+  color: #e8b2d4;
+}
+
+.result-screen .star-28 {
+  top: 70%;
+  right: 7%;
+  font-size: 15px;
+  color: #e8c572;
+}
+
+.result-screen .star-29 {
+  top: 82%;
+  right: 18%;
+  font-size: 19px;
+  color: #c1ade9;
+}
+
+.result-screen .star-30 {
+  top: 92%;
+  right: 7%;
+  font-size: 27px;
+  color: #efabc2;
+}
