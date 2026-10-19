@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { answerOffsets, idolGroups, questions, type IdolGroup } from "./data";
 import { strengthByGroup } from "./strengthData";
 
@@ -452,6 +452,42 @@ export default function App() {
   const [answers, setAnswers] = useState<Array<number | null>>(() =>
     Array(questions.length).fill(null),
   );
+
+  useEffect(() => {
+    // トップ画面ではタイマーを動かさない
+    if (screen === "home") return;
+
+    let timer: ReturnType<typeof setTimeout>;
+
+    const resetTimer = () => {
+      clearTimeout(timer);
+
+      timer = setTimeout(() => {
+        // 40秒間何も操作されなかったらトップへ戻る
+        setAnswers(Array(questions.length).fill(null));
+        setCurrent(0);
+        setScreen("home");
+        window.scrollTo({ top: 0 });
+      }, 40000);
+    };
+
+    // タイマー開始
+    resetTimer();
+
+    // 操作されたら40秒に戻す
+    window.addEventListener("click", resetTimer);
+    window.addEventListener("touchstart", resetTimer);
+    window.addEventListener("keydown", resetTimer);
+    window.addEventListener("scroll", resetTimer);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("click", resetTimer);
+      window.removeEventListener("touchstart", resetTimer);
+      window.removeEventListener("keydown", resetTimer);
+      window.removeEventListener("scroll", resetTimer);
+    };
+  }, [screen]);
 
   const results = useMemo(() => {
     if (answers.some((answer) => answer === null)) return [];
